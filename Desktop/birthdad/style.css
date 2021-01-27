@@ -1,0 +1,38 @@
+h1 {
+  font-family: 'Comic Sans';
+  font-size: 100px;
+  color: red;
+  margin: auto 0;
+}
+body {
+  background-image: url('https://cdn.drawception.com/images/panels/2012/10-23/PqxaOcb8t1-6.png'); 
+  background-size: cover;
+  background-position: center;
+}
+div {
+  display: block;
+  margin: 200px 200px 200px 800px;
+}
+label {
+  color: teal;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Helvetica';
+}
+input {
+  height: 40px;
+  font-size: 25px;
+}
+button {
+  font-family: 'Helvetica';
+  font-size: 25px;
+  font-weight: 700;
+  background-color: red;
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+}
+button:hover {
+  height: 75px;
+  width: 300px;
+}
