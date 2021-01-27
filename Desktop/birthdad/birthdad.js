@@ -1,6 +1,7 @@
 let inputName = '';
 let inputDate = '';
-let shaun = url('https://media1.giphy.com/media/l41m6xDXyuUq9FP0I/giphy.gif');
+const shaun = "url('https://media1.giphy.com/media/l41m6xDXyuUq9FP0I/giphy.gif')";
+const sadness = "url('https://media1.tenor.com/images/614be36a0a1c3cc9e1970129f837ffdf/tenor.gif?itemid=16907102')";
 // get today's date
 const today = new Date();
 
@@ -46,6 +47,7 @@ console.log(numOfCandles);
     document.querySelector('body').style.backgroundImage = shaun;
   } else {
     document.querySelector('h1').innerText = `Commiserations, ${inputName}.  It's not your birthday.`;
+    document.querySelector('body').style.backgroundImage = sadness;
     document.querySelector('h1').style.fontFamily = 'Blackletter';
     person.value = '';
   birthdate.value = '';
