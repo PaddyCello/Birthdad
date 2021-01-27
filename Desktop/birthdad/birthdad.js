@@ -1,5 +1,6 @@
 let inputName = '';
 let inputDate = '';
+let shaun = url('https://media1.giphy.com/media/l41m6xDXyuUq9FP0I/giphy.gif');
 // get today's date
 const today = new Date();
 
@@ -16,32 +17,38 @@ person.addEventListener('change', getName);
 const birthdate = document.getElementById('birthdate');
 
 function getDate() {
-  inputDate = birthdate.value;
+  inputDate = new Date(birthdate.value);
 };
 
 birthdate.addEventListener('change', getDate);
 
 //compare input date and today's date
 
-const todayMonth = today.getMonth();
-const todayDay = today.getDay();
-
-const birthdayMonth = parseInt(inputDate.slice(5,7));
-const birthdayDay = parseInt(inputDate.slice(8));
-
-const numOfCandles = today.getFullYear() - parseInt(inputDate.slice(0,4));
 
 //display relevant message
 
 const checkInfo = () => {
 
+const todayMonth = today.getMonth();
+const todayDay = today.getDate();
+
+console.log(typeof inputDate);
+
+const birthdayMonth = inputDate.getMonth();
+const birthdayDay = inputDate.getDate();
+
+const numOfCandles = today.getFullYear() - inputDate.getFullYear();
+console.log(numOfCandles);
   if (todayMonth == birthdayMonth && todayDay == birthdayDay) {
+    
     document.querySelector('h1').innerText = `Congratulations, ${inputName}! You are ${numOfCandles} years old!`;
     document.querySelectorAll('div').hidden = true;
-    document.querySelector('body').style.backgroundImage = url('https://media1.giphy.com/media/l41m6xDXyuUq9FP0I/giphy.gif');
+    document.querySelector('body').style.backgroundImage = shaun;
   } else {
     document.querySelector('h1').innerText = `Commiserations, ${inputName}.  It's not your birthday.`;
     document.querySelector('h1').style.fontFamily = 'Blackletter';
+    person.value = '';
+  birthdate.value = '';
   };
 };
 
@@ -50,9 +57,6 @@ const keepInfo = document.getElementById('birthbtn');
 keepInfo.addEventListener('click', saveInfo);
 
 function saveInfo() {
-  console.log(inputName, inputDate);
-  person.value = '';
-  birthdate.value = '';
   if (inputName && inputDate) {
     checkInfo();
 };
