@@ -1,6 +1,6 @@
 let inputName = '';
 let inputDate = '';
-const shaun = "url('https://media1.giphy.com/media/l41m6xDXyuUq9FP0I/giphy.gif')";
+const shaun = "url('https://media1.giphy.com/media/l41m6xDXyuUq9FP0I/giphy.gif') no-repeat center fixed";
 const sadness = "url('https://media1.tenor.com/images/614be36a0a1c3cc9e1970129f837ffdf/tenor.gif?itemid=16907102')";
 // get today's date
 const today = new Date();
@@ -43,7 +43,8 @@ const numOfCandles = today.getFullYear() - inputDate.getFullYear();
     document.querySelector('h1').innerText = `Congratulations, ${inputName}! You are ${numOfCandles} years old!`;
     document.getElementById('namein').style.display = 'none';
     document.getElementById('datein').style.display = 'none';
-    document.querySelector('body').style.backgroundImage = shaun;
+    document.querySelector('body').style.background = shaun;
+    document.querySelector('body').style.backgroundSize = 'cover';
   } else {
     document.querySelector('h1').innerText = `Commiserations, ${inputName}.  It's not your birthday.`;
     document.querySelector('body').style.backgroundImage = sadness;
